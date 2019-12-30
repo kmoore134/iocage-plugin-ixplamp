@@ -1,0 +1,28 @@
+{
+  "name": "ixplamp",
+  "release": "11.2-RELEASE",
+  "artifact": "https://github.com/miwi-fbsd/iocage-plugin-ixplamp.git",
+  "pkgs": [
+    "postgresql11-server",
+    "postgresql11-contrib",
+    "python36",
+    "python3",
+    "py36-virtualenv",
+    "py36-pip",
+    "py36-sqlite3",
+    "nginx"
+  ],
+  "properties": {
+     "allow_sysvipc": "1"
+  },
+  "packagesite": "http://pkg.cdn.trueos.org/iocage/databases/testing/",
+  "fingerprints": {
+	  "iocage-plugins": [
+		  {
+		  "function": "sha256",
+		  "fingerprint": "226efd3a126fb86e71d60a37353d17f57af816d1c7ecad0623c21f0bf73eb0c7"
+	  }
+	  ]
+  },
+  "official": true
+}
