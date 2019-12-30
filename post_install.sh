@@ -39,15 +39,18 @@ service postgresql restart
 
 #Create pgadmin4 env
 virtualenv-3.6 pgadmin4
+
 #Use the the own version easier to hack the configs
 cd pgadmin4/bin
-chmod 755 activate.csh
-/bin/csh source activate.csh
+
 #install deps
 echo "Install Deps..."
 ./pip3 install pyopenssl cryptography pyasn1 ndg-httpsclient > /dev/null 2>&1
 echo "Install pgAdmin4"
 ./pip3 install https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v4.1/pip/pgadmin4-4.1-py2.py3-none-any.whl > /dev/null 2>&1
+
+# Run in CSH
+/usr/local/bin/setup_pgadmin.csh
 
 #Sed magic to open up the server on any ip
 sed -i '' "s|127.0.0.1|0.0.0.0|g" /pgadmin4/lib/python3.6/site-packages/pgadmin4/config.py
